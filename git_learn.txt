@@ -1,0 +1,24 @@
+git config -- global user.name "Your name"
+git config -- global user.email "email@.com"//登录口令
+
+
+/*创建仓库*/
+mkdir <filename> //创建空文件
+cd <filename> //打开文件
+pwd //查看文件目录
+git init //把当前bash文件创建仓库
+git add <filename.> //把需要提交的修改放到暂存区
+git commit -m "News!"//暂存区的修改提交到当前分支“News!”为注解
+cat <filename.> //file的工作区内容
+
+/*版本控制*/
+git status //查看当前文件目录下的工作区与  暂存区和仓库的版本更新状态
+git diff <filename.> //查看该文件的工作区与版本库的不同
+
+git log //查看版本信息注释commit内容等
+git reset --hard HEAD^ //工作区文件版本 回退到head指针前一个版本即是回退老版本
+git reset --hard commit_id //  到commit_id版本
+git reflog //查看所有版本历史
+git diff HEAD -- <filename.> //查看工作区和版本库head指针的区别
+git checkout -- <filename.> //file文件内容撤销到最近的版本库的内容
+git reset HEAD <filename> //工作区内容 回退到HEAD指针内容退到暂存区 修改回退再加git checkout口令将工作区回退到暂存区版本
