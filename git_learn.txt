@@ -17,8 +17,46 @@ git diff <filename.> //查看该文件的工作区与版本库的不同
 
 git log //查看版本信息注释commit内容等
 git reset --hard HEAD^ //工作区文件版本 回退到head指针前一个版本即是回退老版本
-git reset --hard commit_id //  到commit_id版本
+git reset --hard commit_id //  工作区到commit_id版本
 git reflog //查看所有版本历史
 git diff HEAD -- <filename.> //查看工作区和版本库head指针的区别
-git checkout -- <filename.> //file文件内容撤销到最近的版本库的内容
-git reset HEAD <filename> //工作区内容 回退到HEAD指针内容退到暂存区 修改回退再加git checkout口令将工作区回退到暂存区版本
+git checkout -- <filename.> //文件内容撤销到最近的版本库的内容
+git reset HEAD <filename> //文件 回退到HEAD指针内容退到暂存区 修改回退再加git checkout口令将工作区回退到暂存区版本
+
+/*文件删除*/
+rm <filename.> // 目录删除文件
+git rm <filename.> //目录删除文件 可以撤销 git reset --hard工作区回退
+
+/*添加远程库*/
+git remote add origin git@github.com:sailor891/learngit.git
+git remote add origin https://github.com/sailor891/learngit.git
+//git仓库remote远程连接到以上ssh或https的github
+//origin为关联的远程库指定一个名字 任意
+//可以同时关联多个库  不重名就行
+git push -u origin master//把master分支关联到origin远程库
+git push origin master  //把master分支更新到github
+git remote -v//查看关联的远程库地址
+git remote rm origin //解除本地和远程的绑定关系
+
+/*从远程库克隆*/
+git clone https://github.com/sailor891/gitskills.git
+//克隆到bash当前所在目录
+
+/*创建分支*/
+git checkout -b <branchname>//创建并切换到dev分支
+相当于git branch <branchname>
+          git checkout <branchname>
+git branch//查看当前分支
+git branch <branchname>//创建分支
+需要注意的是在<branchname>分支提交的内容只在<branchname>中切换回master分支工作区变回master最新内容
+git merge <branchname>//把<branchname>分支的成果合并到master(当前) 分支
+git branch -d <branchname>//删除分支
+git switch -c <branchname>//创建并切换dev分支
+git switch <branchname>//切换分支
+
+/*合并分支错误*/
+
+
+/*github使用*/
+fork//从官方仓库复制项目到自己github上
+pull request //推送修改的代码
