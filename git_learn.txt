@@ -1,5 +1,6 @@
-git config -- global user.name "Your name"
-git config -- global user.email "email@.com"//登录口令
+git config --global user.name "Your name"
+/*还是git config -- global user.name "Your name"？？*/
+git config --global user.email "email@qq.com"//登录口令
 
 
 /*创建仓库*/
